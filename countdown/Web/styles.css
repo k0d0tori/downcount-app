@@ -1,0 +1,79 @@
+@font-face {
+  font-family: quicksand;
+  src: url(Quicksand-Regular.otf);
+}
+
+body {
+  background-image: url('2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: quicksand;
+  line-height: 1.6;
+  color: #FFFFFF;
+}
+
+.flex {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+input[type = button] {
+  border-radius: 15px;
+  font-size: 22px;
+  color: #FFFFFF;
+  font-family: quicksand;
+  background: url('5.png');
+  background-size: cover;
+  border: none;
+  outline:none;
+  transition: 0.2s;
+}
+
+input[type = button]:hover{
+  transform: scale(1.02);
+}
+
+input[type = text] {
+  border-radius: 5px;
+  font-size: 22px;
+  background-color: rgba(0, 0, 0, 0.22);
+  font-family: quicksand;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+}
+
+#date {
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(0, 0, 0, 0.22);
+}
+
+#title {
+  font-size: 33px;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(0, 0, 0, 0.22);
+}
+
+#inf {
+  font-size: 22px;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.22);
+  text-align: center;
+  margin: 33px;
+}
+
+#l {
+  margin-top: 44px;
+}

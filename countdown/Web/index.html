@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "utf-8">
+    <script type = "text/javascript" src = "/eel.js"></script>
+    <script type = "text/javascript" src = "main.js"></script>
+    <link rel = "stylesheet" href = "styles.css">
+
+    <script>
+      // passes the date to python, sets title and removes initial elements
+      function to() {
+        var dt = document.getElementById('dateIn').value;
+        var tl = document.getElementById('titleIn').value;
+
+        document.getElementById('dateIn').remove();
+        document.getElementById('titleIn').remove();
+        document.getElementById('submit').remove();
+        document.getElementById('inf').remove();
+
+        // Creating the discard button
+        var discard = document.createElement('input');
+        discard.id = 'l';
+        discard.type = "button";
+        discard.value = 'Discard';
+        discard.onclick = function reload() {
+          eel.restart() // triggers the python restart function
+          window.close()
+        }
+        document.getElementById('disc').appendChild(discard);
+
+
+        document.getElementById('title').innerHTML = tl;
+        eel.infou(dt);
+      }
+
+      // takes python output
+      eel.expose(countdown);
+      function countdown(t) {
+        document.getElementById('date').innerHTML = t;
+      }
+    </script>
+
+    <title>DownCount</title>
+  </head>
+  <body>
+    <div class = 'flex'>
+      <p id = 'inf'>Welcome to <b>DownCount</b>! To set a downcount, insert the title into the left<br> field, then the desired date into the right one. Required date format:<br> dd/mm/yyyy hh:mm:ss</p>
+      <form>
+        <input type = 'text' id = 'titleIn'>
+        <input type = 'text' id = 'dateIn'>
+        <input type = 'button' id = 'submit' value = 'Create' onclick = 'to()'>
+      </form>
+      <div id = 'title'></div>
+      <SUP>&nbsp;</SUP>
+      <div id = 'date'></div>
+      <div id = 'disc'></div>
+    </div>
+  </body>
+</html>
